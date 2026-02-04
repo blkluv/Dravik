@@ -3,9 +3,13 @@ import axios from "axios";
 import AssetCard from "./AssetCard";
 import Sidebar from "./Sidebar";
 
-type Props = { token: string };
+type Props = {
+  token: string;
+  role: string | null;
+};
 
-export default function MyAssetsPage({ token }: Props) {
+
+export default function MyAssetsPage({ token, role }: Props) {
   const [assets, setAssets] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +30,8 @@ export default function MyAssetsPage({ token }: Props) {
 
   return (
     <div>
-        <Sidebar />
+        <Sidebar role={role} />
+
     <div className="max-w-6xl mx-auto mt-12">
       <h2 className="text-3xl font-bold text-sky-600 mb-8">My Assets</h2>
 

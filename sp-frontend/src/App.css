@@ -86,3 +86,19 @@
 .animate-marquee {
   animation: marquee 18s linear infinite;
 }
+
+@keyframes ticketFade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-ticket {
+  animation: ticketFade 0.35s ease forwards;
+  opacity: 0;
+}

@@ -22,9 +22,11 @@ interface Asset {
 
 interface Props {
   token: string;
+  role: string | null;
 }
 
-export default function IPFiDashboard({ token }: Props) {
+
+export default function IPFiDashboard({ token, role }: Props) {
   const [assets, setAssets] = useState<Asset[]>([]);
   const [loading, setLoading] = useState<string | null>(null); // ipId being processed
   useEffect(() => {
@@ -64,7 +66,9 @@ export default function IPFiDashboard({ token }: Props) {
 
   return (
     <div className="flex">
-      <Sidebar />
+      <Sidebar role={role} />
+
+
       <div className="p-5 flex-1">
         <h1 className="text-2xl font-bold mb-5">IPFi Dashboard</h1>
 
